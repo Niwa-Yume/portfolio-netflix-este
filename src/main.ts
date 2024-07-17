@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const lazyImages = Array.from(document.querySelectorAll<HTMLImageElement>("img.lazy"));
 
   if ("IntersectionObserver" in window) {
-    const lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+    const lazyImageObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           const lazyImage = entry.target as HTMLImageElement;
